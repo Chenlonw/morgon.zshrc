@@ -101,7 +101,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-alias rsf="cd /home/chlwang/software/RSFSRC/user/chlwang"
+alias rsf="cd /home/chlwang/software/RSFSRC-1.7/user/chlwang"
 alias mada="cd /home/chlwang/work/Madagascar"
 alias work="cd /home/chlwang/work"
 alias bp="cd /home/chlwang/norwaybackup"
