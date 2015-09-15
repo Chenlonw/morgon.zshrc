@@ -115,6 +115,7 @@ alias ps="pscons"
 alias sc="scons -c"
 alias sl="scons lock"
 alias sv="scons view"
+alias vpd="vpconvert format=pdf"
 
 alias gv="evince"
 alias vi="rvim"
