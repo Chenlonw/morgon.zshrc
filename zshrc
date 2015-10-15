@@ -102,6 +102,7 @@ fi
 export LD_LIBRARY_PATH
 
 alias rsf="cd /home/chlwang/software/RSFSRC-1.7/user/chlwang"
+alias rsfsrc="cd /home/chlwang/software/RSFSRC-1.7"
 alias mada="cd /home/chlwang/work/Madagascar"
 alias work="cd /home/chlwang/work"
 alias bp="cd /home/chlwang/norwaybackup"
@@ -116,6 +117,9 @@ alias sc="scons -c"
 alias sl="scons lock"
 alias sv="scons view"
 alias vpd="vpconvert format=pdf"
+#modified the pwd command in shell, it will automatically copy the route into clipboard
+#sudo apt-get install xclip
+alias pwd="pwd|xclip|xclip -o"
 
 alias gv="evince"
 alias vi="rvim"
