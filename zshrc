@@ -119,8 +119,8 @@ alias sv="scons view"
 alias vpd="vpconvert format=pdf"
 #modified the pwd command in shell, it will automatically copy the route into clipboard
 #sudo apt-get install xclip
-alias pwd="pwd|xclip|xclip -o"
-
+#alias pwd="pwd|tr -d '\n'|xclip|xclip -o"
+alias pwd="pwd|tr -d '\n'|xclip|pwd"
 alias gv="evince"
 alias vi="rvim"
 alias vim="gvim" 
