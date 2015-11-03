@@ -1,0 +1,17 @@
+#########################################################################
+# File Name: GNSYNC.sh
+# Description: Geeknote automatically sync script
+# Author: Chenlong Wang
+# mail: clwang88@gmail.com
+# Created Time: ti. 03. nov. 2015 kl. 16.32 +0100
+#########################################################################
+#!/bin/bash
+
+Geekhome=/home/chlwang/Nutstore/Evernote/GeeknoteControl
+cd $Geekhome
+
+for D in *
+	do cd $Geekhome/$D
+	gnsync --path ./ --logpath ./.log/geeknote.log --notebook $D
+	echo "$Geekhome/$D"
+done

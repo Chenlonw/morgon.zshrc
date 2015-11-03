@@ -1,0 +1,10 @@
+#########################################################################
+# File Name: Gnsync.sh
+# Description: 
+# Author: Chenlong Wang
+# mail: clwang88@gmail.com
+# Created Time: ti. 03. nov. 2015 kl. 17.01 +0100
+#########################################################################
+#!/bin/bash
+
+gnsync --path ./ --logpath ./.log/geeknote.log --notebook ${PWD##*/}

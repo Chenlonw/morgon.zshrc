@@ -124,3 +124,7 @@ alias pwd="pwd|tr -d '\n'|xclip|pwd"
 alias gv="evince"
 alias vi="rvim"
 alias vim="gvim" 
+
+#Commands with Geeknote
+alias chlGnsyncLocal="/home/chlwang/.zsh/chlGnsyncLocal"
+alias chlGnsyncGlobal="/home/chlwang/.zsh/chlGnsyncGlobal"
