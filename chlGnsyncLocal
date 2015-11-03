@@ -7,4 +7,5 @@
 #########################################################################
 #!/bin/bash
 
+echo "gnsync --path ./ --logpath ./.log/geeknote.log --notebook ${PWD##*/}"
 gnsync --path ./ --logpath ./.log/geeknote.log --notebook ${PWD##*/}
