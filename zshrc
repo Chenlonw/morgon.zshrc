@@ -97,7 +97,7 @@ source $RSFROOT/share/madagascar/etc/env.sh
 if [ -z "LD_LIBRARY_PATH" ]; then
 	LD_LIBRARY_PATH=$HOME/local/lib
 else
-	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/lib:/home/chlwang/software/fftw/lib:/home/chlwang/software/mpi/lib
+	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/lib:/home/chlwang/software/fftw/lib:/home/chlwang/software/mpi/lib:/home/chlwang/software/RSFSRC-1.7/user/espenbir/liblbfgs/lib
 fi
 export LD_LIBRARY_PATH
 
@@ -110,13 +110,15 @@ alias kongull="ssh -X chenlonw@kongull.hpc.ntnu.no"
 alias seis="ssh -X chenlonw@seis.ivt.ntnu.no"
 alias pets="ssh -X chenlonw@pets.ivt.ntnu.no"
 alias datafile="ssh -X msim@syn2211.ipt.ntnu.no" 
+alias 221="ssh -X chlwang@99.0.0.221" 
+alias 219="ssh -X chlwang@99.0.0.219" 
 
 alias s="scons"
 alias ps="pscons"
 alias sc="scons -c"
 alias sl="scons lock"
 alias sv="scons view"
-alias vpd="vpconvert format=pdf"
+alias vpd="vpconvert *.vpl format=pdf"
 #modified the pwd command in shell, it will automatically copy the route into clipboard
 #sudo apt-get install xclip
 #alias pwd="pwd|tr -d '\n'|xclip|xclip -o"
@@ -125,6 +127,10 @@ alias gv="evince"
 alias vi="rvim"
 alias vim="gvim" 
 
+#Modify the ip address for vpn
+alias vpn="sudo vim /run/resolvconf/resolv.conf"
+
 #Commands with Geeknote
 alias chlGnsyncLocal="/home/chlwang/.zsh/chlGnsyncLocal"
 alias chlGnsyncGlobal="/home/chlwang/.zsh/chlGnsyncGlobal"
+alias pdfcompress="/home/chlwang/.zsh/pdfcompress"
