@@ -133,4 +133,6 @@ alias vpn="sudo vim /run/resolvconf/resolv.conf"
 #Commands with Geeknote
 alias chlGnsyncLocal="/home/chlwang/.zsh/chlGnsyncLocal"
 alias chlGnsyncGlobal="/home/chlwang/.zsh/chlGnsyncGlobal"
-alias pdfcompress="/home/chlwang/.zsh/pdfcompress"
+alias chlPdfcompress="/home/chlwang/.zsh/pdfcompress"
+alias chlClean="/home/chlwang/.zsh/clean"
+alias zotero="/home/chlwang/software/zotero/Zotero_linux-x86_64/zotero"
