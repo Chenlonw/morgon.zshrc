@@ -128,6 +128,7 @@ alias pwd="pwd|tr -d '\n'|xclip|pwd"
 alias gv="evince"
 alias vi="rvim"
 alias vim="gvim" 
+#alias vim="gvim --nofork" 
 
 #Modify the ip address for vpn
 alias vpn="sudo vim /run/resolvconf/resolv.conf"
