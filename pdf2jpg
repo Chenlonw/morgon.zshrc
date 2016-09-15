@@ -1,0 +1,29 @@
+#########################################################################
+# File Name: convert.sh
+# Description: 
+# Author: Chenlong Wang
+# mail: clwang88@gmail.com
+# Created Time: to. 15. sep. 2016 kl. 18.45 +0800
+#########################################################################
+#!/bin/zsh
+
+touch list
+echo "########################################" >list
+echo "    files has been found, Check!!!" >>list
+echo "########################################\n" >>list
+find . -name "*.pdf" >list1
+cat list1 >>list
+less list
+
+echo -n 'confirm or not? [y/n] >'
+read choose
+case "$choose" in
+  [yY])  for file in *.pdf; do
+		echo "converting $file"
+		convert -density 300 $file ${file%%.pdf}".jpg"
+		done &&
+	  rm list1 list &&
+	  exit;;
+  [nN]) rm list1 list && echo "Exit" && exit;;
+  * ) rm list1  list && echo "wrong input" && exit;;
+esac

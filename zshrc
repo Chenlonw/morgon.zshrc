@@ -101,6 +101,11 @@ else
 fi
 export LD_LIBRARY_PATH
 
+
+######################################
+#              Alias                 #
+######################################
+
 alias rsf="cd /home/chlwang/software/RSFSRC-1.7/user/chlwang"
 alias rsfsrc="cd /home/chlwang/software/RSFSRC-1.7"
 alias mada="cd /home/chlwang/work/Madagascar"
@@ -116,15 +121,17 @@ alias 219="ssh -Y chlwang@99.0.0.219"
 alias cjb="ssh -Y cjb@99.0.0.225" 
 
 alias s="scons -Q"
-alias ps="pscons"
+alias sp="pscons"
 alias sc="scons -c"
 alias sl="scons lock"
+alias st="scons -Q TIMER=y"
 alias sv="scons view"
 alias vpd="vpconvert *.vpl format=pdf"
 #modified the pwd command in shell, it will automatically copy the route into clipboard
 #sudo apt-get install xclip
 #alias pwd="pwd|tr -d '\n'|xclip|xclip -o"
 alias pwd="pwd|tr -d '\n'|xclip|pwd"
+alias .="pwd"
 alias gv="evince"
 alias vi="rvim"
 alias vim="gvim" 
@@ -138,8 +145,11 @@ alias chlGnsyncLocal="/home/chlwang/.zsh/chlGnsyncLocal"
 alias chlGnsyncGlobal="/home/chlwang/.zsh/chlGnsyncGlobal"
 alias chlPdfcompress="/home/chlwang/.zsh/pdfcompress"
 alias chlClean="/home/chlwang/.zsh/clean"
+alias chlBigClean="/home/chlwang/.zsh/cleanbig"
 alias chlsougou="/home/chlwang/.zsh/chlrestartsougou"
 alias chlTimer="python /home/chlwang/.zsh/timer/rest.py"
+alias chlpdf2jpg="/home/chlwang/.zsh/pdf2jpg"
+
 alias zotero="/home/chlwang/software/zotero/Zotero_linux-x86_64/zotero"
 alias xterm="xterm -fa monaco -fs 13 -bg black -fg white"
 alias srccjb="source /home/chlwang/Public/RSFGIT/share/madagascar/etc/env.sh"
