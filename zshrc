@@ -152,7 +152,6 @@ alias chlpdf2jpg="/home/chlwang/.zsh/pdf2jpg"
 
 alias zotero="/home/chlwang/software/zotero/Zotero_linux-x86_64/zotero"
 alias xterm="xterm -fa monaco -fs 13 -bg black -fg white"
-alias srccjb="source /home/chlwang/Public/RSFGIT/share/madagascar/etc/env.sh"
 alias srcwiktor="source /home/chlwang/Public/WiktorBitbucket/WiktorBitbucketBin/share/madagascar/etc/env.sh"
 alias srclocal="source $RSFROOT/share/madagascar/etc/localenv.sh"
 alias srcchlw="source /home/chlwang/Backup/RSF/share/madagascar/etc/env.sh"
