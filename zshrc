@@ -91,7 +91,7 @@ fi
 ##configure basic software and lib environment
 export CWPROOT=/home/chlwang/software/cwp
 export RSFROOT=/home/chlwang/software/RSF
-export PATH=$PATH:./:$CWPROOT/bin:$RSFROOT/bin:/home/chlwang/software/mpi/bin:/home/chlwang/software/fftw/bin
+export PATH=$PATH:./:$CWPROOT/bin:$RSFROOT/bin:/home/chlwang/software/mpi/bin:/home/chlwang/software/fftw/bin:/usr/local/MATLAB/R2014a/bin
 source $RSFROOT/share/madagascar/etc/env.sh
 
 if [ -z "LD_LIBRARY_PATH" ]; then
@@ -100,6 +100,9 @@ else
 	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/lib:/home/chlwang/software/fftw/lib:/home/chlwang/software/mpi/lib:/home/chlwang/software/RSFSRC-1.7/user/espenbir/liblbfgs/lib
 fi
 export LD_LIBRARY_PATH
+
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:"/usr/local/MATLAB/R2014a/extern/include"
+export LIBRARY_PATH=$LIBRARY_PATH:"/usr/local/MATLAB/R2014a/bin/glnxa64"
 
 
 ######################################
@@ -130,15 +133,16 @@ alias vpd="vpconvert *.vpl format=pdf"
 #modified the pwd command in shell, it will automatically copy the route into clipboard
 #sudo apt-get install xclip
 #alias pwd="pwd|tr -d '\n'|xclip|xclip -o"
-alias pwd="pwd|tr -d '\n'|xclip|pwd"
 alias .="pwd"
+alias pwd="pwd|tr -d '\n'|xclip|pwd"
 alias gv="evince"
+alias pdf="okular"
 alias vi="rvim"
 alias vim="gvim" 
 #alias vim="gvim --nofork" 
 
 #Modify the ip address for vpn
-alias vpn="sudo vim /run/resolvconf/resolv.conf"
+alias vpn="sudo cp ~/.zsh/resolv.conf /run/resolvconf/"
 
 #Commands with Geeknote
 alias chlGnsyncLocal="/home/chlwang/.zsh/chlGnsyncLocal"
@@ -149,6 +153,7 @@ alias chlBigClean="/home/chlwang/.zsh/cleanbig"
 alias chlsougou="/home/chlwang/.zsh/chlrestartsougou"
 alias chlTimer="python /home/chlwang/.zsh/timer/rest.py"
 alias chlpdf2jpg="/home/chlwang/.zsh/pdf2jpg"
+alias chlmat="export LD_LIBRARY_PATH=/usr/local/MATLAB/R2014a/bin/glnxa64"
 
 alias zotero="/home/chlwang/software/zotero/Zotero_linux-x86_64/zotero"
 alias xterm="xterm -fa monaco -fs 13 -bg black -fg white"
