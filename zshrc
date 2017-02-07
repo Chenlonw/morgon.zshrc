@@ -119,9 +119,9 @@ alias kongull="ssh -X chenlonw@kongull.hpc.ntnu.no"
 alias seis="ssh -X chenlonw@seis.ivt.ntnu.no"
 alias pets="ssh -X chenlonw@pets.ivt.ntnu.no"
 alias datafile="ssh -X msim@syn2211.ipt.ntnu.no" 
-alias 221="ssh -Y chlwang@99.0.0.221" 
-alias 219="ssh -Y chlwang@99.0.0.219" 
-alias cjb="ssh -Y cjb@99.0.0.225" 
+alias 221="ssh chlwang@99.0.0.221" 
+alias 219="ssh chlwang@99.0.0.219" 
+alias cjb="ssh cjb@99.0.0.225" 
 
 alias s="scons -Q"
 alias sp="pscons"
@@ -143,6 +143,7 @@ alias vim="gvim"
 
 #Modify the ip address for vpn
 alias vpn="sudo cp ~/.zsh/resolv.conf /run/resolvconf/"
+alias ssh="ssh -Y "
 
 #Commands with Geeknote
 alias chlGnsyncLocal="/home/chlwang/.zsh/chlGnsyncLocal"
@@ -156,7 +157,7 @@ alias chlpdf2jpg="/home/chlwang/.zsh/pdf2jpg"
 alias chlmat="export LD_LIBRARY_PATH=/usr/local/MATLAB/R2014a/bin/glnxa64"
 
 alias zotero="/home/chlwang/software/zotero/Zotero_linux-x86_64/zotero"
-alias xterm="xterm -fa monaco -fs 13 -bg black -fg white"
+alias xterm="xterm -fa monaco -fs 13 -bg white -fg black"
 alias srcwiktor="source /home/chlwang/Public/WiktorBitbucket/WiktorBitbucketBin/share/madagascar/etc/env.sh"
 alias srclocal="source $RSFROOT/share/madagascar/etc/localenv.sh"
 alias srcchlw="source /home/chlwang/Backup/RSF/share/madagascar/etc/env.sh"
