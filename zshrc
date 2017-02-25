@@ -155,6 +155,7 @@ alias chlsougou="/home/chlwang/.zsh/chlrestartsougou"
 alias chlTimer="python /home/chlwang/.zsh/timer/rest.py"
 alias chlpdf2jpg="/home/chlwang/.zsh/pdf2jpg"
 alias chlmat="export LD_LIBRARY_PATH=/usr/local/MATLAB/R2014a/bin/glnxa64"
+alias chlkillmada="/home/chlwang/.zsh/chlkillmada"
 
 alias zotero="/home/chlwang/software/zotero/Zotero_linux-x86_64/zotero"
 alias xterm="xterm -fa monaco -fs 13 -bg white -fg black"
