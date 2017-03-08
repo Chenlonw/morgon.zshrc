@@ -94,6 +94,12 @@ export RSFROOT=/home/chlwang/software/RSF
 export PATH=$PATH:./:$CWPROOT/bin:$RSFROOT/bin:/home/chlwang/software/mpi/bin:/home/chlwang/software/fftw/bin:/usr/local/MATLAB/R2014a/bin
 source $RSFROOT/share/madagascar/etc/env.sh
 
+if [ -n "$PYTHONPATH" ]; then
+export PYTHONPATH=/home/chlwang/.zsh/chlwpython:${PYTHONPATH}
+else
+export PYTHONPATH=/home/chlwang/.zsh/chlwpython
+fi
+
 if [ -z "LD_LIBRARY_PATH" ]; then
 	LD_LIBRARY_PATH=$HOME/local/lib
 else
