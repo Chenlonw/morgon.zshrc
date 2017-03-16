@@ -8,10 +8,16 @@ def param(par):
     if(not par.has_key('dt')):       par['dt']=1.
     if(not par.has_key('lt')):       par['lt']='t'
     if(not par.has_key('ut')):       par['ut']='s'
+
+    if(not par.has_key('nh')):       par['nh']=1
+    if(not par.has_key('dh')):       par['dh']=10.
+    if(not par.has_key('oh')):       par['oh']=-(par['nh'] - 1)/2*par['dh']
+    if(not par.has_key('lh')):       par['lh']='h'
+    if(not par.has_key('uh')):       par['uh']='km'
             
     if(not par.has_key('ox')):       par['ox']=0.
     if(not par.has_key('nx')):       par['nx']=1
-    if(not par.has_key('dx')):       par['dx']=1.
+    if(not par.has_key('dx')):       par['dx']=10.
     if(not par.has_key('lx')):       par['lx']='x'
     if(not par.has_key('ux')):       par['ux']='km'
     
@@ -36,7 +42,7 @@ def param(par):
     if(not par.has_key('zmin')):     par['zmin']=par['oz']
     if(not par.has_key('zmax')):     par['zmax']=par['oz'] + (par['nz']-1) * par['dz']
 
-    if(not par.has_key('labelattr')): par['labelattr']=' parallel2=n labelsz=10 labelfat=8 titlesz=12 titlefat=3 '
+    if(not par.has_key('labelattr')): par['labelattr']=' labelsz=20 labelfat=15 titlesz=15 titlefat=3 '
 
     if(not par.has_key('ratio')):
         if(par['nx']==0.0):
@@ -44,6 +50,7 @@ def param(par):
         else:
             par['ratio']=1.0*par['nz']/par['nx']
 
+# sfgrey in space (X) domain:
 def Xgrey2d(custom,par):
     return '''
     grey 
@@ -56,6 +63,7 @@ def Xgrey2d(custom,par):
            par['xmin'],par['xmax'],par['lx'],par['ux'],
            par['ratio'], par['labelattr']+custom)
 
+# Modificable sfgrey in space (X) domain:
 def XMgrey2d(custom,par):
     return '''
     put n1=%g n2=%g d1=%g d2=%g |
@@ -68,3 +76,29 @@ def XMgrey2d(custom,par):
            par['lz'],par['uz'],
            par['lx'],par['ux'],
            par['ratio'], par['labelattr']+custom)
+
+# Modificable sfgrey in Gather domain:
+def GMgrey2d(custom,par):
+    return '''
+    put n1=%g n2=%g d1=%g d2=%g o1=%g o2=%g|
+    grey title=""
+    pclip=100 gainpanel=a
+    label1=%s unit1=%s
+    label2=%s unit2=%s
+    screenratio=1.5 %s
+    ''' % (par['nz'],par['nh'],par['dz'],par['dh'],par['oz'],par['oh'],
+           par['lz'],par['uz'],
+           par['lh'],par['uh'],
+           par['labelattr']+custom)
+
+# sfgrey in Gather domain:
+def Ggrey2d(custom,par):
+    return '''
+    grey title=""
+    pclip=100 gainpanel=a
+    label1=%s unit1=%s
+    label2=%s unit2=%s
+    screenratio=1.5 %s
+    ''' % (par['lz'],par['uz'],
+           par['lh'],par['uh'],
+           par['labelattr']+custom)
