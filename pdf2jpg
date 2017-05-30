@@ -18,9 +18,9 @@ less list
 echo -n 'confirm or not? [y/n] >'
 read choose
 case "$choose" in
-  [yY])  for file in *.pdf; do
-		echo "converting $file"
-		convert -density 300 $file ${file%%.pdf}".jpg"
+  [yY]) cat list1 | while read line; do
+		echo "converting $line"
+		convert -density 300 $line ${line%%.pdf}".jpg"
 		done &&
 	  rm list1 list &&
 	  exit;;

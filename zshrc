@@ -91,8 +91,10 @@ fi
 ##configure basic software and lib environment
 export CWPROOT=/home/chlwang/software/cwp
 export RSFROOT=/home/chlwang/software/RSF
-export PATH=$PATH:./:$CWPROOT/bin:$RSFROOT/bin:/home/chlwang/software/mpi/bin:/home/chlwang/software/fftw/bin:/usr/local/MATLAB/R2014a/bin
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export PATH=$PATH:./:$CWPROOT/bin:$RSFROOT/bin:/home/chlwang/software/mpi/bin:/home/chlwang/software/fftw/bin:/usr/local/MATLAB/R2014a/bin:$JAVA_HOME/bin
 source $RSFROOT/share/madagascar/etc/env.sh
+
 
 if [ -n "$PYTHONPATH" ]; then
 export PYTHONPATH=/home/chlwang/.zsh/chlwpython:${PYTHONPATH}
@@ -162,6 +164,7 @@ alias chlTimer="python /home/chlwang/.zsh/timer/rest.py"
 alias chlpdf2jpg="/home/chlwang/.zsh/pdf2jpg"
 alias chlmat="export LD_LIBRARY_PATH=/usr/local/MATLAB/R2014a/bin/glnxa64"
 alias chlkillmada="/home/chlwang/.zsh/chlkillmada"
+alias gf="shotwell "
 
 alias zotero="/home/chlwang/software/zotero/Zotero_linux-x86_64/zotero"
 alias xterm="xterm -fa monaco -fs 13 -bg white -fg black"
