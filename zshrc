@@ -92,7 +92,7 @@ fi
 export CWPROOT=/home/chlwang/software/cwp
 export RSFROOT=/home/chlwang/software/RSF
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-export PATH=$PATH:./:$CWPROOT/bin:$RSFROOT/bin:/home/chlwang/software/mpi/bin:/home/chlwang/software/fftw/bin:/usr/local/MATLAB/R2014a/bin:$JAVA_HOME/bin
+export PATH=$PATH:./:$CWPROOT/bin:$RSFROOT/bin:/home/chlwang/software/openmpi/bin:/home/chlwang/software/fftw/bin:/usr/local/MATLAB/R2014a/bin:$JAVA_HOME/bin
 source $RSFROOT/share/madagascar/etc/env.sh
 
 
@@ -105,13 +105,16 @@ fi
 if [ -z "LD_LIBRARY_PATH" ]; then
 	LD_LIBRARY_PATH=$HOME/local/lib
 else
-	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/lib:/home/chlwang/software/fftw/lib:/home/chlwang/software/mpi/lib:/home/chlwang/software/RSFSRC-1.7/user/espenbir/liblbfgs/lib
+	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/lib:/home/chlwang/software/fftw/lib:/home/chlwang/software/openmpi/lib:/home/chlwang/software/RSFSRC-1.7/user/espenbir/liblbfgs/lib
 fi
 export LD_LIBRARY_PATH
 
 export C_INCLUDE_PATH=$C_INCLUDE_PATH:"/usr/local/MATLAB/R2014a/extern/include"
 export LIBRARY_PATH=$LIBRARY_PATH:"/usr/local/MATLAB/R2014a/bin/glnxa64"
 
+
+# added by Anaconda2 4.4.0 installer
+# export PATH="/data/NewSoftware/anaconda2/bin:$PATH"
 
 ######################################
 #              Alias                 #
@@ -131,7 +134,7 @@ alias 221="ssh chlwang@99.0.0.221"
 alias 219="ssh chlwang@99.0.0.219" 
 alias cjb="ssh cjb@99.0.0.225" 
 
-alias s="scons -Q"
+alias s="scons "
 alias sp="pscons"
 alias sc="scons -c"
 alias sl="scons lock"
@@ -146,6 +149,7 @@ alias pwd="pwd|tr -d '\n'|xclip|pwd"
 alias gv="evince"
 alias pdf="okular"
 alias vi="rvim"
+alias a="atom"
 alias vim="gvim" 
 #alias vim="gvim --nofork" 
 
@@ -171,3 +175,6 @@ alias xterm="xterm -fa monaco -fs 13 -bg white -fg black"
 alias srcwiktor="source /home/chlwang/Public/WiktorBitbucket/WiktorBitbucketBin/share/madagascar/etc/env.sh"
 alias srclocal="source $RSFROOT/share/madagascar/etc/localenv.sh"
 alias srcchlw="source /home/chlwang/Backup/RSF/share/madagascar/etc/env.sh"
+alias srcmada2017="source /data/CJBRSF/RSF/share/madagascar/etc/env.sh"
+alias srcahay="source /data/RSF.github/RSF/share/madagascar/etc/env.sh"
+
