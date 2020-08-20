@@ -1,0 +1,159 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=/home/chlwang/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git autojump)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+export THIS_IS_A_SERVER=True
+
+export RSFROOT=/home/chlwang/Software/RSF
+export RSFSRC=/home/chlwang/Software/RSFSRC
+export CWPROOT=/home/chlwang/Software/cwp
+export ALIZEROOT=/home/chlwang/Work/SpeechRec/speaker_recognition/alize/LIA_RAL
+
+source $RSFROOT/share/madagascar/etc/env.sh
+
+if [ -z "LD_LIBRARY_PATH" ]; then
+	LD_LIBRARY_PATH=$HOME/local/lib
+else
+	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/lib:/home/chlwang/Software/openmpi/lib:/usr/local/cuda-9.0/lib64:/usr/lib
+fi
+export LD_LIBRARY_PATH
+
+if [ -n "$PYTHONPATH" ]; then
+# export PYTHONPATH=/home/chlwang/.zsh/chlwpython:/home/chlwang/Work/SpeechRec/speaker_recognition/sidekit/implementation/demo_gmm:${PYTHONPATH}
+export PYTHONPATH=/home/chlwang/Work/datascience/competition/kaggle:/home/chlwang/.zsh/chlwpython:${PYTHONPATH}
+else
+# export PYTHONPATH=/home/chlwang/.zsh/chlwpython:/home/chlwang/Work/SpeechRec/speaker_recognition/sidekit/implementation/demo_gmm
+export PYTHONPATH=/home/chlwang/.zsh/chlwpython
+fi
+
+SIDEKIT="theano=true,theano_config=cuda,libsvm=true,mpi=false"
+
+alias s="scons "
+alias sp="pscons"
+alias sc="scons -c"
+alias sl="scons lock"
+alias st="scons -Q TIMER=y"
+alias sv="scons view"
+alias vpd="vpconvert *.vpl format=pdf"
+
+alias wechat="/home/chlwang/Software/wechat/electronic-wechat-linux-x64/electronic-wechat"
+alias vps="ssh -o ServerAliveInterval=30 root@98.142.139.58 -p 28459"
+alias vim="gvim"
+alias gv="evince "
+alias pwd="pwd|tr -d '\n'|xclip|xclip -o"
+alias .="pwd"
+alias pycharm="sh /home/chlwang/Software/pycharm-2017.2.3/bin/pycharm.sh&"
+alias robo="/home/chlwang/Software/robo3t-1.1.1-linux-x86_64-c93c6b0/bin/robo3t"
+alias xmind="/home/chlwang/Software/xmind/XMind_amd64/XMind"
+alias ipynb2slides="~/.zsh/ipynb2slides"
+alias cpdf="/home/chlwang/Software/cpdf/cpdf-binaries-master/Linux-Intel-64bit/cpdf"
+
+# added by Anaconda2 installer
+export PATH="/home/chlwang/Software/anaconda/bin:$PATH"
+export PATH="/home/chlwang/Software/openmpi/bin:$PATH"
+export PATH="/home/chlwang/Downloads/meld-3.18.0/bin:$PATH"
+export PATH="$CWPROOT/bin:$PATH"
+export PATH="$ALIZEROOT/bin:$PATH"
+export PATH="/usr/local/cuda-9.0/bin:$PATH"
+# solve error GLib-GIO-Message: Using the 'memory' GSettings backend.  Your settings will not be
+# saved or shared with other applications. in VIM
+export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
+
+ 
+# The following alias are automatically appended by CHLWREPO
+alias build="/home/chlwang/codeRepo/src/shell/build.sh"
+alias cleanbig="/home/chlwang/codeRepo/src/shell/cleanbig.sh"
+alias ipynb2slides="/home/chlwang/codeRepo/src/shell/ipynb2slides.sh"
+alias xterm="xterm -fa Monaco -fs 12&"
+alias clean="echo 1 > /proc/sys/vm/drop_caches"
+alias ikaggle="source activate datascience"
+alias hy="ssh -N -f -L localhost:8887:localhost:8889 chlwang@192.168.205.18" 
+alias jy='ssh -X alexpartisan@192.168.204.177'
+alias jupyter="jupyter notebook --no-browser --port=8889"
+alias pip install="pip install -i https://pypi.tuna.tsinghua.edu.cn/simple"
+ 
+
+	[[ -s /home/chlwang/.autojump/etc/profile.d/autojump.sh ]] && source /home/chlwang/.autojump/etc/profile.d/autojump.sh
+
+	autoload -U compinit && compinit -u
